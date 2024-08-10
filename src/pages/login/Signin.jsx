@@ -36,7 +36,7 @@ const Signin = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post(`http://localhost:3000/api/auth/login`, credentials);
+      const res = await axios.post(`https://bookmyhotel-backend.onrender.com/api/auth/login`, credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user});
       navigate("/");
     } catch (err) {

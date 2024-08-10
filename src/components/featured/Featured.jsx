@@ -3,7 +3,7 @@ import "./featured.css";
 
 const Featured = () => {
   const encodedCities = encodeURIComponent("New Delhi,Gurgaon,Mumbai");
-  const url = `http://localhost:3000/api/hotels/countByCity?cities=${encodedCities}`;
+  const url = `https://bookmyhotel-backend.onrender.com/api/hotels/countByCity?cities=${encodedCities}`;
   const  {data,loading,error} =  useFetch(url);
   console.log(data);
   return (

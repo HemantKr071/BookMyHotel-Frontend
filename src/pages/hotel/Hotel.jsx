@@ -23,7 +23,7 @@ const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const url = `http://localhost:3000/api/hotels/find/${id}`;
+  const url = `https://bookmyhotel-backend.onrender.com/api/hotels/find/${id}`;
   const  {data,loading,error} =  useFetch(url);
   const {user} = useContext(AuthContext);
   const navigate = useNavigate();

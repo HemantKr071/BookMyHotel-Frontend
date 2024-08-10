@@ -16,7 +16,7 @@ const List = () => {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
-  const url = `http://localhost:3000/api/hotels/all?city=${destination}&min=${min || 0}$max=${max || 20000}`;
+  const url = `https://bookmyhotel-backend.onrender.com/api/hotels/all?city=${destination}&min=${min || 0}$max=${max || 20000}`;
   const {data,loading,error,reFetch} = useFetch(url);
   const handleClick = ()=>{
     reFetch();

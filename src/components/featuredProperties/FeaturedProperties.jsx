@@ -2,7 +2,7 @@ import "./featuredProperties.css";
 import useFetch from "../../hooks/useFetch";
 
 const FeaturedProperties = () => {
-  const url = `http://localhost:3000/api/hotels/countByType`;
+  const url = `https://bookmyhotel-backend.onrender.com/api/hotels/countByType`;
   const  {data,loading,error} =  useFetch(url);
   return (
     <div className="fp">
