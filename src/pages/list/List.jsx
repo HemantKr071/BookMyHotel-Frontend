@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
+import CircularLoader from "../../components/CircularLoader";
 const List = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
@@ -97,7 +98,9 @@ const List = () => {
             <button onClick={handleClick}>Search</button>
           </div>
           <div className="listResult">
-            {loading ? 'Loading':
+            {loading ? ( <div style = {{width:"100%" ,display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <CircularLoader/>
+       </div>):
             <>
             {data.map((item)=>{
                 return <SearchItem item={item} key={item._id} />

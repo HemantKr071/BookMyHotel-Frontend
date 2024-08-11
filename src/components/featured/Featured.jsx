@@ -1,6 +1,6 @@
 import useFetch from "../../hooks/useFetch";
 import "./featured.css";
-
+import CircularLoader from "../CircularLoader";
 const Featured = () => {
   const encodedCities = encodeURIComponent("New Delhi,Gurgaon,Mumbai");
   const url = `https://bookmyhotel-backend.onrender.com/api/hotels/countByCity?cities=${encodedCities}`;
@@ -9,7 +9,12 @@ const Featured = () => {
   return (
     <div className="featured">  
      
-      {loading ? ( "Loading,Please Wait") : (
+      {loading ? (
+        <div style = {{width:"100%" ,display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <CircularLoader/>
+       </div>) 
+       
+       : (
         <> 
         <div className="featuredItem">
         <img

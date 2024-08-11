@@ -17,6 +17,8 @@ import { SearchContext } from "../../context/SearchContext";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
+import CircularLoader from "../../components/CircularLoader";
+
 const Hotel = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
@@ -91,7 +93,9 @@ const Hotel = () => {
     <div>
       <Navbar />
       <Header type="list" />
-      {loading ? "Loading" : <div className="hotelContainer">
+      {loading ? ( <div style = {{width:"100%" ,display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <CircularLoader/>
+       </div>)  : <div className="hotelContainer">
         {open && (
           <div className="slider">
             <FontAwesomeIcon

@@ -1,5 +1,6 @@
 import "./propertyList.css";
 import useFetch from "../../hooks/useFetch";
+import CircularLoader from "../CircularLoader";
 
 const PropertyList = () => {
   const url = `https://bookmyhotel-backend.onrender.com/api/hotels/countByType`;
@@ -14,7 +15,10 @@ const PropertyList = () => {
 
   return (
     <div className="pList">
-      {loading ? ("loading") : ( 
+      {loading ? ( <div style = {{width:"100%" ,display:"flex",alignItems:"center",justifyContent:"center"}}>
+        
+          <CircularLoader/>
+       </div>) : ( 
         <>
         {data && images.map( (img,i)=>{
            return (<div className="pListItem" key={i}>
